@@ -8,7 +8,6 @@ Welcome to the "libft" project, part of the 42 School cursus. This project is yo
 - [Project Description](#project-description)
 - [Libc functions](#libc-functions)
 - [Additional Functions](#additional-functions)
-- [How to Use](#how-to-use)
 
 ## Project Description
 

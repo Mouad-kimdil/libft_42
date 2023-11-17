@@ -56,7 +56,7 @@ Here are additional functions in the "libft" library:
 - `char	*ft_strjoin(char const *s1, char const *s2);`
 - `char	**ft_split(const char *s, char c);`
 
-## Additional Functions
+## Bonus Functions
 
 Here are bonus functions in the "libft" library:
 

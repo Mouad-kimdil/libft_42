@@ -8,6 +8,7 @@ Welcome to the "libft" project, part of the 42 School cursus. This project is yo
 - [Project Description](#project-description)
 - [Libc functions](#libc-functions)
 - [Additional Functions](#additional-functions)
+- [Bonus Functions](#bonus-functions)
 
 ## Project Description
 
@@ -54,3 +55,17 @@ Here are additional functions in the "libft" library:
 - `char	*ft_substr(char const *s, unsigned int start, size_t len);`
 - `char	*ft_strjoin(char const *s1, char const *s2);`
 - `char	**ft_split(const char *s, char c);`
+
+## Additional Functions
+
+Here are bonus functions in the "libft" library:
+
+- `t_list	*ft_lstnew(void *content);`
+- `void	ft_lstadd_front(t_list **lst, t_list *new);`
+- `int		ft_lstsize(t_list *lst);`
+- `t_list	*ft_lstlast(t_list *lst);`
+- void	ft_lstadd_back(t_list **lst, t_list *new);`
+- `void	ft_lstdelone(t_list *lst, void (*del)(void*));`
+- `void	ft_lstclear(t_list **lst, void (*del)(void*));`
+- `void	ft_lstiter(t_list *lst, void (*f)(void *));`
+- `t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));`

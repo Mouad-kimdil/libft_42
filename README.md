@@ -1,71 +1,129 @@
-# Libft - 42 Project By ![Mouad Kimdil](https://img.shields.io/badge/Mouad-Kimdil-blue)
+# 📚 MyLibrary - Personal C Utility Library
 
-![School: 1337](https://img.shields.io/badge/School-1337-blue)
+A personal collection of commonly used C functions and utilities designed to streamline development and avoid repetitive coding across projects.
 
-Welcome to the "libft" project, part of the 42 School cursus. This project is your introduction to the world of C programming and serves as the foundation for many projects to come. "libft" is a library containing a collection of commonly used functions, both from the standard C library ("libc functions") and additional functions that you will implement from scratch.
+## 🎯 Overview
 
-## Table of Contents
-- [Project Description](#project-description)
-- [Libc functions](#libc-functions)
-- [Additional Functions](#additional-functions)
-- [Bonus Functions](#bonus-functions)
+**MyLibrary** is my personal utility library that consolidates frequently used C functions in one place. Instead of rewriting the same string manipulations, memory operations, and utility functions for every new project, this library provides a ready-to-use collection that speeds up development and ensures consistency across my codebase.
 
-## Project Description
+## ✨ Features
 
-"libft" is your first project at 42 School, and it's designed to help you become familiar with C programming and the essential functions used in everyday programming tasks. The library contains functions that cover a wide range of functionalities, from manipulating strings to working with memory and characters.
+### Core String & Memory Functions
+- **String manipulation**: `my_strlen`, `my_strchr`, `my_strrchr`, `my_strncmp`, `my_strdup`, etc.
+- **Memory operations**: `my_memset`, `my_memcpy`, `my_memmove`, `my_memcmp`, etc.
+- **Character classification**: `my_isalpha`, `my_isdigit`, `my_isalnum`, `my_toupper`, etc.
+- **String utilities**: `my_substr`, `my_strjoin`, `my_strtrim`, `my_split`, etc.
+- **Conversion functions**: `my_atoi`, `my_itoa`, and more
+- **Linked list operations**: `my_lstnew`, `my_lstadd_front`, `my_lstsize`, `my_lstmap`, etc.
 
-## Libc functions
+### 🛡️ Memory Safety Features
+- **`my_free`** - Enhanced free function that prevents dangling pointers by:
+  - Safely deallocating memory
+  - Setting pointer to NULL after freeing
+  - Preventing double-free errors
+  - Providing safer memory management patterns
 
-Here's a list of functions included in the "libft" library:
+## 🚀 Installation
 
-- `size_t	ft_strlen(const char *s);`
-- `size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize);`
-- `size_t	ft_strlcat(char *dest, const char *src, size_t dstsize);`
-- `char	*ft_strrchr(const char *str, int c);`
-- `char	*ft_strchr(const char *s, int c);`
-- `char	*ft_strnstr(const char *str, const char *to_find, size_t len);`
-- `char	*ft_strdup(char *str);`
-- `int		ft_isalpha(int c);`
-- `int		ft_isdigit(int c);`
-- `int		ft_isalnum(int c);`
-- `int		ft_isascii(int c);`
-- `int		ft_isprint(int c);`
-- `int		ft_toupper(int c);`
-- `int		ft_tolower(int c);`
-- `int		ft_strncmp(const char *s1, const char *s2, size_t len);`
-- `int		ft_memcmp(const void *s1, void *s2, size_t n);`
-- `int		ft_atoi(const char *str);`
-- `void	*ft_memset(void *b, int c, size_t len);`
-- `void	ft_bzero(void *s, size_t n);`
-- `void	*ft_memcpy(void *dest, const void *src, size_t n);`
-- `void	*ft_memmove(void *dest, const void *src, size_t len);`
-- `void	*ft_memchr(const void *s, int c, size_t n);`
-- `void	*ft_calloc(size_t count, size_t size);`
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/mylibrary.git
+cd mylibrary
 
-## Additional Functions
+# Compile the library
+make
 
-Here are additional functions in the "libft" library:
+# Clean object files
+make clean
 
-- `char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));`
-- `void	ft_striteri(char *s, void (*f)(unsigned int, char*));`
-- `void	ft_putchar_fd(char c, int fd);`
-- `void	ft_putstr_fd(char *s, int fd);`
-- `void	ft_putendl_fd(char *s, int fd);`
-- `void	ft_putnbr_fd(int n, int fd);`
-- `char	*ft_substr(char const *s, unsigned int start, size_t len);`
-- `char	*ft_strjoin(char const *s1, char const *s2);`
-- `char	**ft_split(const char *s, char c);`
+# Remove all generated files
+make fclean
+```
 
-## Bonus Functions
+## 📖 Usage
 
-Here are bonus functions in the "libft" library:
+```c
+#include "mylibrary.h"
 
-- `t_list	*ft_lstnew(void *content);`
-- `void	ft_lstadd_front(t_list **lst, t_list *new);`
-- `int		ft_lstsize(t_list *lst);`
-- `t_list	*ft_lstlast(t_list *lst);`
-- `void	ft_lstadd_back(t_list **lst, t_list *new);`
-- `void	ft_lstdelone(t_list *lst, void (*del)(void*));`
-- `void	ft_lstclear(t_list **lst, void (*del)(void*));`
-- `void	ft_lstiter(t_list *lst, void (*f)(void *));`
-- `t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));`
+int main(void)
+{
+    // String operations
+    char *str = my_strdup("Hello, World!");
+    int len = my_strlen(str);
+    
+    // String utilities
+    char *trimmed = my_strtrim("  Hello World  ", " ");
+    char **words = my_split("apple,banana,cherry", ',');
+    
+    // Safe memory deallocation
+    my_free((void **)&str);     // str is now NULL
+    my_free((void **)&trimmed); // trimmed is now NULL
+    
+    return (0);
+}
+```
+
+## 🏗️ Project Structure
+
+```
+mylibrary/
+├── my_*.c         # Source files
+├── mylibrary.h    # Header file
+├── Makefile       # Build configuration
+└── README.md      # This file
+```
+
+## 🧪 Key Functions Overview
+
+### Standard Functions
+| Function | Description | Original |
+|----------|-------------|----------|
+| `my_strlen` | Calculate string length | `strlen` |
+| `my_strchr` | Find character in string | `strchr` |
+| `my_strdup` | Duplicate string | `strdup` |
+| `my_memset` | Fill memory with constant byte | `memset` |
+| `my_calloc` | Allocate and zero memory | `calloc` |
+
+### Enhanced Functions
+| Function | Description |
+|----------|-------------|
+| `my_substr` | Extract substring |
+| `my_strjoin` | Join two strings |
+| `my_strtrim` | Trim characters from string |
+| `my_split` | Split string by delimiter |
+| `my_itoa` | Convert integer to string |
+
+### Safety Functions
+| Function | Description |
+|----------|-------------|
+| `my_free` | Safe memory deallocation with NULL assignment |
+
+## 💡 Why Use MyLibrary?
+
+- **Time-saving**: No need to rewrite common functions for every project
+- **Consistency**: Same reliable implementations across all my projects
+- **Safety**: Enhanced memory management prevents common C pitfalls
+- **Convenience**: All essential utilities in one place
+- **Tested**: Well-tested functions that I trust and use regularly
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🏆 Acknowledgments
+
+- Originally inspired by the **42 School** libft project
+- Customized and enhanced for personal development workflow
+- Continuously updated based on project needs
+
+---
+
+**A personal toolkit that makes C development faster and more reliable.**

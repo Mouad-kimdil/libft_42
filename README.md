@@ -1,12 +1,12 @@
-# 📚 MyLibrary - Personal C Utility Library
+# MyLibrary - Personal C Utility Library
 
 A personal collection of commonly used C functions and utilities designed to streamline development and avoid repetitive coding across projects.
 
-## 🎯 Overview
+## Overview
 
 **MyLibrary** is my personal utility library that consolidates frequently used C functions in one place. Instead of rewriting the same string manipulations, memory operations, and utility functions for every new project, this library provides a ready-to-use collection that speeds up development and ensures consistency across my codebase.
 
-## ✨ Features
+## Features
 
 ### Core String & Memory Functions
 - **String manipulation**: `my_strlen`, `my_strchr`, `my_strrchr`, `my_strncmp`, `my_strdup`, etc.
@@ -16,14 +16,14 @@ A personal collection of commonly used C functions and utilities designed to str
 - **Conversion functions**: `my_atoi`, `my_itoa`, and more
 - **Linked list operations**: `my_lstnew`, `my_lstadd_front`, `my_lstsize`, `my_lstmap`, etc.
 
-### 🛡️ Memory Safety Features
+### Memory Safety Features
 - **`my_free`** - Enhanced free function that prevents dangling pointers by:
   - Safely deallocating memory
   - Setting pointer to NULL after freeing
   - Preventing double-free errors
   - Providing safer memory management patterns
 
-## 🚀 Installation
+## Installation
 
 ```bash
 # Clone the repository
@@ -50,20 +50,20 @@ int main(void)
     // String operations
     char *str = my_strdup("Hello, World!");
     int len = my_strlen(str);
-    
+
     // String utilities
     char *trimmed = my_strtrim("  Hello World  ", " ");
     char **words = my_split("apple,banana,cherry", ',');
-    
+
     // Safe memory deallocation
     my_free((void **)&str);     // str is now NULL
     my_free((void **)&trimmed); // trimmed is now NULL
-    
+
     return (0);
 }
 ```
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 mylibrary/
@@ -73,7 +73,7 @@ mylibrary/
 └── README.md      # This file
 ```
 
-## 🧪 Key Functions Overview
+## Key Functions Overview
 
 ### Standard Functions
 | Function | Description | Original |
@@ -98,7 +98,7 @@ mylibrary/
 |----------|-------------|
 | `my_free` | Safe memory deallocation with NULL assignment |
 
-## 💡 Why Use MyLibrary?
+## Why Use MyLibrary?
 
 - **Time-saving**: No need to rewrite common functions for every project
 - **Consistency**: Same reliable implementations across all my projects
@@ -106,7 +106,7 @@ mylibrary/
 - **Convenience**: All essential utilities in one place
 - **Tested**: Well-tested functions that I trust and use regularly
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
@@ -114,11 +114,11 @@ mylibrary/
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📝 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🏆 Acknowledgments
+## Acknowledgments
 
 - Originally inspired by the **42 School** libft project
 - Customized and enhanced for personal development workflow
